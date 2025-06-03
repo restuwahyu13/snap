@@ -15,7 +15,7 @@ import (
 
 type (
 	Signature interface {
-		GenerateAsymmetricx(req Asymmetric) (res SignatureResponse)
+		GenerateAsymmetric(req Asymmetric) (res SignatureResponse)
 		GenerateSymmetric(req Symetric) (res SignatureResponse)
 		VerifyAsymmetric(req VerifyAsymmetric) (res SignatureResponse)
 		VerifySymmetric(req VerifySymetric) (res SignatureResponse)
@@ -28,7 +28,7 @@ func NewSignature() Signature {
 	return signature{}
 }
 
-func (p signature) GenerateAsymmetricx(req Asymmetric) (res SignatureResponse) {
+func (p signature) GenerateAsymmetric(req Asymmetric) (res SignatureResponse) {
 	cert := NewCert()
 	salt := rand.Reader
 
